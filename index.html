@@ -132,9 +132,23 @@
       <img src="assets/images/footer/logo.svg" alt="">
     </footer>
     
-    <script type="module" src="assets/js/main.js"></script>
     <script>
-      
+      function switchTheme() {
+        const body = document.body; // Seleciona o elemento <body>
+        
+        // Verifica se o tema claro está ativo (ou seja, se o <body> tem a classe "light-theme")
+        if (body.classList.contains('light-theme')) {
+          // Se sim, remove a classe light-theme (para aplicar o tema escuro)
+          body.classList.remove('light-theme');
+          // Opcionalmente, adiciona um atributo "aria-label" para descrever o tema atual
+          body.setAttribute('aria-label', 'O site está utilizando o tema escuro');
+        } else {
+          // Caso contrário, adiciona a classe light-theme para ativar o tema claro
+          body.classList.add('light-theme');
+          body.setAttribute('aria-label', 'O site está utilizando o tema claro');
+        }
+      }
+
     </script>
   </body>
 </html>
